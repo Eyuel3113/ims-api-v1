@@ -1,0 +1,8 @@
+name,code,category_name,unit,barcode,purchase_price,selling_price,min_stock,has_expiry,is_vatable
+"Wireless Mouse",WM001,Electronics,pcs,880998877001,15.50,25.00,20,0,1
+"Mechanical Keyboard",MK002,Electronics,pcs,880998877002,45.00,80.00,10,0,1
+"USB-C Cable 1m",Cab003,Electronics,pcs,880998877003,2.50,8.00,50,0,1
+"Notebook A4",NB001,Stationery,pcs,990011223344,1.20,3.50,100,0,0
+"Ballpoint Pen Blue",Pen002,Stationery,box,990011223355,5.00,12.00,30,0,0
+"Organic Milk 1L",Milk001,Groceries,pcs,776655443322,1.50,2.50,20,1,0
+"Cheddar Cheese",Chz002,Groceries,kg,776655443333,8.00,15.00,5,1,0

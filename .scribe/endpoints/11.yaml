@@ -1,0 +1,203 @@
+name: Reports
+description: 'API Endpoints for generating business reports and analytics.'
+endpoints:
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: api/v1/reports/overview
+    metadata:
+      custom: []
+      groupName: Reports
+      groupDescription: 'API Endpoints for generating business reports and analytics.'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Overview Report'
+      description: 'Get high-level business metrics including revenue, profit, and sales volume.'
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: api/v1/reports/sales
+    metadata:
+      custom: []
+      groupName: Reports
+      groupDescription: 'API Endpoints for generating business reports and analytics.'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Sales Report'
+      description: 'Get top selling products and breakdown by payment methods.'
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: api/v1/reports/inventory
+    metadata:
+      custom: []
+      groupName: Reports
+      groupDescription: 'API Endpoints for generating business reports and analytics.'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Inventory Report'
+      description: 'Get current stock value and list of low stock items.'
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: api/v1/reports/profit-loss
+    metadata:
+      custom: []
+      groupName: Reports
+      groupDescription: 'API Endpoints for generating business reports and analytics.'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Profit & Loss Report'
+      description: 'Get monthly breakdown of revenue, COGS, and gross profit for the last 12 months.'
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: api/v1/reports/tax
+    metadata:
+      custom: []
+      groupName: Reports
+      groupDescription: 'API Endpoints for generating business reports and analytics.'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Tax Report'
+      description: 'Get Input VAT (Purchases), Output VAT (Sales), and Net VAT.'
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null

@@ -1,0 +1,456 @@
+name: 'Expense Management'
+description: |-
+
+  APIs for managing operational and capital expenses.
+endpoints:
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: api/v1/expenses/all
+    metadata:
+      custom: []
+      groupName: 'Expense Management'
+      groupDescription: |-
+
+        APIs for managing operational and capital expenses.
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'List All by Category'
+      description: 'Get all expenses without pagination, grouped by their category.'
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      category:
+        custom: []
+        name: category
+        description: 'optional Filter by specific category.'
+        required: false
+        example: architecto
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      category: architecto
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: |-
+          {
+            "message": "Expenses listed by category",
+            "data": {
+              "Operating Expenses": [ ... ],
+              "Capital Expenses": [ ... ]
+            }
+          }
+        headers: []
+        description: ''
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: api/v1/expenses
+    metadata:
+      custom: []
+      groupName: 'Expense Management'
+      groupDescription: |-
+
+        APIs for managing operational and capital expenses.
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'List Expenses'
+      description: 'Get paginated list of expenses with filter and total sum.'
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      category:
+        custom: []
+        name: category
+        description: 'optional Operating Expenses, Non-Operating Expenses, Capital Expenses'
+        required: false
+        example: architecto
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      from_date:
+        custom: []
+        name: from_date
+        description: 'date optional Filter by created date (from).'
+        required: false
+        example: architecto
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      to_date:
+        custom: []
+        name: to_date
+        description: 'date optional Filter by created date (to).'
+        required: false
+        example: architecto
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      search:
+        custom: []
+        name: search
+        description: 'optional Title or description search.'
+        required: false
+        example: architecto
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      limit:
+        custom: []
+        name: limit
+        description: 'optional Default 10.'
+        required: false
+        example: 16
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanQueryParameters:
+      category: architecto
+      from_date: architecto
+      to_date: architecto
+      search: architecto
+      limit: 16
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: |-
+          {
+            "message": "Expenses fetched successfully",
+            "total_sum": 1500.00,
+            "data": [ ... ],
+            "pagination": { ... }
+          }
+        headers: []
+        description: ''
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - POST
+    uri: api/v1/expenses
+    metadata:
+      custom: []
+      groupName: 'Expense Management'
+      groupDescription: |-
+
+        APIs for managing operational and capital expenses.
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Create Expenses'
+      description: 'Record one or multiple expenses under a single category.'
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      category:
+        custom: []
+        name: category
+        description: 'Operating Expenses, Non-Operating Expenses, Capital Expenses.'
+        required: true
+        example: 'Non-Operating Expenses'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      items:
+        custom: []
+        name: items
+        description: 'The list of expenses to create.'
+        required: true
+        example:
+          - []
+        type: 'object[]'
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      'items[].title':
+        custom: []
+        name: 'items[].title'
+        description: 'Unique title for the expense.'
+        required: true
+        example: Loan
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      'items[].amount':
+        custom: []
+        name: 'items[].amount'
+        description: 'Amount spent.'
+        required: true
+        example: 10000.0
+        type: number
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      'items[].description':
+        custom: []
+        name: 'items[].description'
+        description: 'optional Description of the expense.'
+        required: false
+        example: 'test expenses'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        deprecated: false
+    cleanBodyParameters:
+      category: 'Non-Operating Expenses'
+      items:
+        -
+          title: Loan
+          amount: 10000.0
+          description: 'test expenses'
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: 'api/v1/expenses/{id}'
+    metadata:
+      custom: []
+      groupName: 'Expense Management'
+      groupDescription: |-
+
+        APIs for managing operational and capital expenses.
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Get Expense'
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        custom: []
+        name: id
+        description: 'Expense UUID'
+        required: true
+        example: architecto
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      id: architecto
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - PUT
+      - PATCH
+    uri: 'api/v1/expenses/{id}'
+    metadata:
+      custom: []
+      groupName: 'Expense Management'
+      groupDescription: |-
+
+        APIs for managing operational and capital expenses.
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Update Expense'
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        custom: []
+        name: id
+        description: 'Expense UUID'
+        required: true
+        example: architecto
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      id: architecto
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      title:
+        custom: []
+        name: title
+        description: optional
+        required: false
+        example: architecto
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      category:
+        custom: []
+        name: category
+        description: 'optional Operating Expenses, Non-Operating Expenses, Capital Expenses'
+        required: false
+        example: architecto
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      amount:
+        custom: []
+        name: amount
+        description: optional
+        required: false
+        example: 4326.41688
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      description:
+        custom: []
+        name: description
+        description: optional
+        required: false
+        example: 'Eius et animi quos velit et.'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+    cleanBodyParameters:
+      title: architecto
+      category: architecto
+      amount: 4326.41688
+      description: 'Eius et animi quos velit et.'
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - DELETE
+    uri: 'api/v1/expenses/{id}'
+    metadata:
+      custom: []
+      groupName: 'Expense Management'
+      groupDescription: |-
+
+        APIs for managing operational and capital expenses.
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Delete Expense'
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        custom: []
+        name: id
+        description: 'Expense UUID'
+        required: true
+        example: architecto
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      id: architecto
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
