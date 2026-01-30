@@ -18,8 +18,3 @@ Analytics dashboard — yes
 PDF reports — yes
 Scribe documentation — yes
 
-
-
-
-
-//stop in purchase
